@@ -8,7 +8,8 @@
 </head>
 <body>
     <video width="640" height="300" id="videojs-vr-player" class="video-js vjs-default-skin" controls playsinline>
-        <source src="eagle-360.mp4" type="video/mp4">
+        <!-- <source src="eagle-360.mp4" type="video/mp4"> -->
+        <source src="http://livestream.tv360.vn/origin01/360/master.m3u8" type="application/x-mpegURL">
     </video>
     <ul>
         <li><a href="../">return to main example</a></li>
@@ -16,26 +17,13 @@
     <script src="dist/video.js"></script>
     <script src="dist/videojs-vr.js"></script>
     <script>
-        // (function(window, videojs) {
-        //     var player = window.player = videojs('videojs-vr-player');
-        //     // player.vr({
-		// 	// 	projection: '360',
-		// 	// 	debug: true
-		// 	// });
-
-        //     player.mediainfo = player.mediainfo || {};
-        //     player.mediainfo.projection = '360';
-
-        //     // AUTO is the default and looks at mediainfo
-        //     var vr = window.vr = player.vr({projection: 'AUTO', debug: true, forceCardboard: false});
-        // }(window, window.videojs));
         (function(window, videojs) {
             var player = window.player = videojs('videojs-vr-player');
             player.mediainfo = player.mediainfo || {};
             player.mediainfo.projection = '360';
 
             // AUTO is the default and looks at mediainfo
-            var vr = window.vr = player.vr({projection: 'AUTO', debug: true, forceCardboard: false});
+            var vr = window.vr = player.vr({projection: 'AUTO'});
         }(window, window.videojs));
     </script>
 </body>
